@@ -2,9 +2,9 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <div class="item-img-wrapper">
-          <img class="item-img" :src="item.url">
+          <img class="item-img" :src="item.imgUrl">
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -18,44 +18,20 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      weekendList: [
-        {
-          id: '001',
-          title: '滕王阁',
-          desc: '看山看水，看看历史对南昌的浸润',
-          url: 'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg'
-        },
-        {
-          id: '002',
-          title: '滕王阁',
-          desc: '看山看水，看看历史对南昌的浸润',
-          url: 'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg'
-        },
-        {
-          id: '003',
-          title: '滕王阁',
-          desc: '看山看水，看看历史对南昌的浸润',
-          url: 'http://img1.qunarzz.com/sight/source/1505/74/a665dfecf12ae.jpg_r_640x214_5d22909a.jpg'
-        }
-      ]
-    }
-  }
+  props: ['list']
 }
 </script>
 
 <style lang="stylus" scoped>
   @import "~styles/mixins.styl"
   .title
-    margin-top .2rem
     line-height .8rem
     background #eee
     text-indent .2rem
   .item-img-wrapper
     height 0
     overflow hidden
-    padding-bottom 33.9%
+    padding-bottom 37.09%
     .item-img
       width 100%
   .item-info
