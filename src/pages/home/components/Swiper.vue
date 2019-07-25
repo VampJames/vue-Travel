@@ -22,11 +22,11 @@ export default {
       swiperList: [
         {
           id: '001',
-          url: 'https://dimg04.c-ctrip.com/images/zg0o16000000zjlo37BAE.jpg'
+          url: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20196/818f6cc784ae6669b74bbbb255414a53.jpg_750x200_66ca5873.jpg'
         },
         {
           id: '002',
-          url: 'https://dimg04.c-ctrip.com/images/zg0a15000000ypf1tBC70.jpg'
+          url: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/d7bbc21db442366a882e04ddc984669a.jpg_750x200_85e640d9.jpg'
         }
       ]
     }
@@ -39,8 +39,8 @@ export default {
     background-color #ffffff
   .swiper
     width: 100%
-    /*height: 0*/
-    /*padding-bottom: 31.25%*/
+    height: 0
+    padding-bottom: 26.65%
     overflow: hidden
     .swiper-img
       width 100%
