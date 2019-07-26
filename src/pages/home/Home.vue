@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeHeader :city="city"></homeHeader>
+    <homeHeader></homeHeader>
     <homeSwiper :list="swiperList"></homeSwiper>
     <homeIcons :list="iconList"></homeIcons>
     <homeRecommend :list="recommendList"></homeRecommend>
@@ -26,7 +26,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
