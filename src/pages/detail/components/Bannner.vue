@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img class="banner-img" src="http://photocdn.sohu.com/20111207/Img328215620.jpg" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
-        <div class="banner-title">产品编号2776143261</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe674;</span>
-          39
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
+    <common-gallary :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
@@ -18,11 +18,14 @@
 import commonGallary from 'common/gallary/Gallary'
 export default {
   name: 'detailBanner',
+  props: [
+    'sightName',
+    'bannerImg',
+    'gallaryImgs'
+  ],
   data () {
     return {
-      showGallary: false,
-      imgs: ['http://photocdn.sohu.com/20111207/Img328215620.jpg',
-        'http://photocdn.sohu.com/20111207/Img328215620.jpg']
+      showGallary: false
     }
   },
   methods: {
