@@ -3,7 +3,11 @@
     <router-link tag="div" to="/" class="header-abs" v-show="showAbs">
       <span class="iconfont header-abs-back">&#xe624;</span>
     </router-link>
-    <div class="header-fixed" v-show="!showAbs" :style="opacictyStyle">
+    <div
+      class="header-fixed"
+      v-show="!showAbs"
+      :style="opacityStyle"
+    >
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
@@ -18,16 +22,10 @@ export default {
   data () {
     return {
       showAbs: true,
-      opacictyStyle: {
+      opacityStyle: {
         opacity: 0
       }
     }
-  },
-  activated () {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  deactivated () {
-    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll () {
@@ -35,12 +33,18 @@ export default {
       if (top > 60) {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity
-        this.opacictyStyle = { opacity }
+        this.opacityStyle = { opacity }
         this.showAbs = false
       } else {
         this.showAbs = true
       }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmouted () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
